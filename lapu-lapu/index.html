@@ -2,21 +2,26 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta name="color-scheme" content="light">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Water interruption today in Lapu-Lapu City, Cebu · Tue, Oct 13</title>
 <meta name="description" content="Lapu-Lapu City, Cebu water interruptions today (Tue, Oct 13): MCWD notices as posted, plus air quality. Unofficial, updated hourly.">
 <link rel="canonical" href="https://leeway1423.github.io/cebualerts/lapu-lapu/">
-<script>try{var t=localStorage.getItem('cebu-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=IBM+Plex+Sans:wght@400;600;700&display=swap">
 <style>
 :root{--paper:#F3F5F7;--surface:#FFF;--ink:#10202B;--muted:#4A5A66;--line:#D5DCE2;--amber:#E09B12;--soft:#FBEBC7;--ok:#2F7D4F;--band-bg:#10202B;--band-ink:#FFF}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--paper:#0E171E;--surface:#16232D;--ink:#E8EEF2;--muted:#A9B8C3;--line:#2A3A46;--amber:#F0B429;--soft:#3A2E10;--ok:#5DBB86;--band-bg:#1B3040;--band-ink:#E8EEF2}}
-:root[data-theme="dark"]{color-scheme:dark;--paper:#0E171E;--surface:#16232D;--ink:#E8EEF2;--muted:#A9B8C3;--line:#2A3A46;--amber:#F0B429;--soft:#3A2E10;--ok:#5DBB86;--band-bg:#1B3040;--band-ink:#E8EEF2}
 *{box-sizing:border-box}
 body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 "IBM Plex Sans","Segoe UI",Roboto,Helvetica,Arial,sans-serif}
 .wrap{max-width:720px;margin:0 auto;padding:20px 16px 40px;display:grid;gap:18px}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:8px 16px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:8px;font:800 20px/1 "Bricolage Grotesque","Segoe UI",Arial,sans-serif;letter-spacing:-.01em;color:var(--ink);text-decoration:none}
+.brand svg{stroke:#0B5E96}
+.seg{display:flex;padding:3px;border:1.5px solid var(--line);border-radius:10px;background:var(--surface)}
+.seg button{min-height:44px;padding:0 14px;border:0;border-radius:7px;font:600 14px/1 "IBM Plex Sans",Arial,sans-serif;cursor:pointer;background:transparent;color:var(--ink)}
+.seg button[aria-pressed="true"]{background:#0B5E96;color:#fff}
+.seg button:focus-visible,.brand:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
 .tag{font:600 12px/1 "IBM Plex Sans",Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 h1{font:700 32px/1.05 "Bricolage Grotesque","Segoe UI",Arial,sans-serif;margin:6px 0 4px}
 h2{font:700 22px/1.1 "Bricolage Grotesque","Segoe UI",Arial,sans-serif;margin:0 0 10px}
@@ -47,12 +52,22 @@ footer{display:grid;gap:6px}
 </head>
 <body>
 <main class="wrap">
+  <div class="topbar">
+    <a class="brand" href="../" aria-label="Cebu Alerts home">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+      Cebu Alerts
+    </a>
+    <div class="seg" role="group" aria-label="Language">
+      <button type="button" data-lang-btn="en" aria-pressed="true" lang="en">EN</button>
+      <button type="button" data-lang-btn="ko" aria-pressed="false" lang="ko">한국어</button>
+    </div>
+  </div>
   <header>
     <div class="tag">Unofficial community service</div>
     <h1>Water interruptions in Lapu-Lapu City today</h1>
-    <p class="sub">MCWD water service area · updated Tue, Oct 13, 11:07 AM (PH time)</p>
+    <p class="sub">MCWD water service area · updated Tue, Oct 13, 12:08 PM (PH time)</p>
   </header>
-  <section><h2>Power</h2><p class="warn">Lapu-Lapu City power is not served by Visayan Electric, and we don't cover it yet. Check your power utility's official page.</p></section><section><h2>💧 Water interruptions | Walay tubig · since yesterday</h2><p class="none">No water interruption posted by MCWD for Lapu-Lapu City since yesterday.</p><p class="src">As posted by MCWD. EWSI = emergency water service interruption · AA = affected areas · EST/ETR = estimated time of restoration. <a href="https://www.mcwd.gov.ph" rel="noopener" data-umami-event="city-source-click">Source: MCWD (News → Water Service Interruptions)</a></p></section><section><h2>🌫 Air quality</h2><article class="item" style="border-left-color:#2F9E44"><div class="kind">US AQI · model estimate · as of Tue, Oct 13, 11:00 AM</div><p class="time"><span style="color:#2F9E44">●</span> 39 — Good</p><p>US EPA: “Air quality is satisfactory, and air pollution poses little or no risk.”</p><p class="why">PM2.5 3.8 µg/m³ · Forecast: rest of today (Tue, Oct 13) up to 46 · tomorrow (Wed, Oct 14) up to 40</p><p class="src">Air quality: model estimate by Open-Meteo.com (CC BY 4.0), contains modified Copernicus Atmosphere Monitoring Service information. Estimates cover a wide area (about 40 km) and are not local measurements. <a href="https://open-meteo.com/en/docs/air-quality-api" rel="noopener" data-umami-event="city-source-click">Source</a></p></article></section>
+  <section><h2>Power</h2><p class="warn">Lapu-Lapu City power is not served by Visayan Electric, and we don't cover it yet. Check your power utility's official page.</p></section><section><h2>💧 Water interruptions | Walay tubig · since yesterday</h2><p class="none">No water interruption posted by MCWD for Lapu-Lapu City since yesterday.</p><p class="src">As posted by MCWD. EWSI = emergency water service interruption · AA = affected areas · EST/ETR = estimated time of restoration. <a href="https://www.mcwd.gov.ph" rel="noopener" data-umami-event="city-source-click">Source: MCWD (News → Water Service Interruptions)</a></p></section><section><h2>🌫 Air quality</h2><article class="item" style="border-left-color:#2F9E44"><div class="kind">US AQI · model estimate · as of Tue, Oct 13, 12:00 PM</div><p class="time"><span style="color:#2F9E44">●</span> 41 — Good</p><p>US EPA: “Air quality is satisfactory, and air pollution poses little or no risk.”</p><p class="why">PM2.5 4.0 µg/m³ · Forecast: rest of today (Tue, Oct 13) up to 46 · tomorrow (Wed, Oct 14) up to 40</p><p class="src">Air quality: model estimate by Open-Meteo.com (CC BY 4.0), contains modified Copernicus Atmosphere Monitoring Service information. Estimates cover a wide area (about 40 km) and are not local measurements. <a href="https://open-meteo.com/en/docs/air-quality-api" rel="noopener" data-umami-event="city-source-click">Source</a></p></article></section>
   <a class="cta" href="../" data-umami-event="city-to-lookup">Cebu brownout &amp; water check →</a>
   <a class="cta join" href="../join/" data-umami-event="city-viber-join-click">Get daily 9 AM alerts free on Viber — join →</a>
   <footer>
@@ -62,5 +77,82 @@ footer{display:grid;gap:6px}
     <div><a href="../">Cebu Alerts</a> · <a href="../privacy.html">Privacy Policy</a></div>
   </footer>
 </main>
+<script>
+// 한국어 보기: 서버가 만든 영어 문구를 규칙표로 바꾼다. 전력사·MCWD 원문(data-src)은 번역하지 않는다.
+(function(){
+  var LANG='en'; try{var l=localStorage.getItem('cebu-lang'); if(l==='ko'||l==='en') LANG=l}catch(e){}
+  var MON={Jan:1,Feb:2,Mar:3,Apr:4,May:5,Jun:6,Jul:7,Aug:8,Sep:9,Oct:10,Nov:11,Dec:12}, WD={Mon:'월',Tue:'화',Wed:'수',Thu:'목',Fri:'금',Sat:'토',Sun:'일'};
+  var LV={'Good':'좋음','Moderate':'보통','Unhealthy for Sensitive Groups':'민감군에게 나쁨','Unhealthy':'나쁨','Very Unhealthy':'매우 나쁨','Hazardous':'위험'};
+  var DESC={
+   'Air quality is satisfactory, and air pollution poses little or no risk.':'대기질이 양호하며 대기오염 위험이 거의 없습니다.',
+   'Air quality is acceptable. However, there may be a risk for some people, particularly those who are unusually sensitive to air pollution.':'대기질이 허용 수준입니다. 다만 대기오염에 특히 민감한 일부 사람에게는 위험이 있을 수 있습니다.',
+   'Members of sensitive groups may experience health effects. The general public is less likely to be affected.':'민감군은 건강에 영향을 받을 수 있습니다. 일반인은 영향 가능성이 낮습니다.',
+   'Some members of the general public may experience health effects; members of sensitive groups may experience more serious health effects.':'일반인 중 일부도 건강에 영향을 받을 수 있고, 민감군은 더 심각한 영향을 받을 수 있습니다.',
+   'Health alert: The risk of health effects is increased for everyone.':'건강 경보: 모든 사람의 건강 영향 위험이 커졌습니다.',
+   'Health warning of emergency conditions: everyone is more likely to be affected.':'긴급 상황 건강 경고: 모든 사람이 영향을 받을 가능성이 높습니다.'};
+  function rx(s){return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}
+  var R=[
+   [/^\s*Unofficial community service\s*$/,'비공식 커뮤니티 서비스'],
+   [/^\s*Brownouts in (.+) today & tomorrow\s*$/,'$1 오늘·내일 정전'],
+   [/^\s*Water interruptions in (.+) today\s*$/,'$1 오늘 단수'],
+   [/Visayan Electric areas/,'Visayan Electric 공급 지역'],[/MCWD water service area/,'MCWD 급수 지역'],
+   [/ · updated /,' · 갱신 '],[/\(PH time\)/,'(필리핀 시간)'],
+   [/^Today · /,'오늘 · '],[/^Tomorrow · /,'내일 · '],
+   [/^\s*Scheduled maintenance\s*$/,'예정 정비 정전'],[/^\s*❌ Cancelled by Visayan Electric\s*$/,'❌ Visayan Electric 취소'],
+   [/Rotational brownouts · grid alert/,'순환 정전 · 전력망 경보'],
+   [/^\s*1 hour per area\. Only part of each barangay may be affected\.\s*$/,'지역당 1시간. 바랑가이 일부만 해당될 수 있습니다.'],
+   [/ \(approximate\)/,' (대략)'],
+   [/^Source: Visayan Electric advisory$/,'출처: Visayan Electric 공지'],[/^ · checked /,' · 확인 '],
+   [/^Source: rotation schedule map$/,'출처: 순환 정전 지도'],[/^Source: MCWD \(News → Water Service Interruptions\)$/,'출처: MCWD (News → Water Service Interruptions)'],
+   [/^Source$/,'출처'],
+   [/No scheduled or rotational brownout listed for (.+) as of (.+)\./,'$2 기준 $1에 등록된 예정 정비·순환 정전이 없습니다.'],
+   [/^Visayan Electric's advisory page could not be checked just now — scheduled brownouts are $/,'Visayan Electric 공지 페이지를 지금은 확인하지 못했습니다. 예정 정전은 '],
+   [/^unconfirmed$/,'확인되지 않은 상태'],[/^\. See the official advisory\.$/,'입니다. 공식 공지를 확인하세요.'],
+   [/^\.\s*$/,'입니다.'],
+   [/^MCWD's interruption list could not be checked just now — water interruptions are $/,'MCWD 단수 목록을 지금은 확인하지 못했습니다. 단수는 '],
+   [/Scheduled brownouts were last checked (.+)\. Please check Visayan Electric's advisory directly for the latest\./,'예정 정전을 마지막으로 확인한 시각: $1. 최신 내용은 Visayan Electric 공지를 직접 확인하세요.'],
+   [/^\s*Power\s*$/,'전기'],[/(.+) power is not served by Visayan Electric, and we don't cover it yet\. Check your power utility's official page\./,'$1의 전기는 Visayan Electric 공급 지역이 아니라 아직 다루지 않습니다. 해당 전력사의 공식 페이지를 확인하세요.'],
+   [/💧 Water interruptions \| Walay tubig · since yesterday/,'💧 단수 | Walay tubig · 어제부터'],
+   [/No water interruption posted by MCWD for (.+) since yesterday\./,'어제 이후 MCWD가 공지한 $1의 단수가 없습니다.'],
+   [/As posted by MCWD\. EWSI = emergency water service interruption · AA = affected areas · EST\/ETR = estimated time of restoration\./,'MCWD 공지 원문 기준. EWSI = 긴급 단수 · AA = 영향 지역 · EST/ETR = 복구 예상 시각. (사유·시간·지역은 MCWD가 쓴 영어 그대로입니다.)'],
+   [/^\s*TODAY\s*$/,'오늘'],[/^Emergency$/,'긴급'],[/^Correction$/,'정정'],[/^Area as listed/,'공지된 지역'],[/ · posted /,' · 게시 '],
+   [/^Why$/,'사유'],[/^When$/,'시간'],[/^Areas$/,'지역'],[/^As posted by MCWD$/,'MCWD 게시 원문'],
+   [/🌫 Air quality/,'🌫 대기질'],[/Air quality data could not be loaded just now\./,'지금은 대기질 데이터를 불러오지 못했습니다.'],
+   [/US AQI · model estimate · as of (.+)/,'US AQI · 모델 추정치 · $1 기준'],
+   [/PM2\.5 (\S+) µg\/m³ · Forecast: (.*)$/,function(m,a,f){return 'PM2.5 '+a+' µg/m³ · 예보: '+f.replace('rest of today','오늘 남은 시간').replace('tomorrow','내일').replace(/ up to /g,' 최대 ')}],
+   [/Estimates cover a wide area \(about 40 km\) and are not local measurements\./,'추정치는 넓은 지역(약 40km)을 대표하며 현지 측정값이 아닙니다.'],
+   [/— (Unhealthy for Sensitive Groups|Very Unhealthy|Unhealthy|Moderate|Good|Hazardous)\s*$/,function(m,n){return '— '+LV[n]}],
+   [/^\s*Check your barangay \(3-day rotation lookup\) →\s*$/,'내 바랑가이 확인 (3일 순환 정전 조회) →'],
+   [/^\s*Cebu brownout & water check →\s*$/,'세부 정전·단수 확인 →'],
+   [/^\s*Get daily 9 AM alerts free on Viber — join →\s*$/,'매일 오전 9시 알림을 Viber에서 무료로 — 가입 →'],
+   [/Emergencies \/ downed lines:/,'긴급 상황·전선 끊김:'],[/Visayan Electric 24\/7:/,'Visayan Electric (24시간):'],
+   [/Schedules can change at short notice\. Always check the linked official source\. Not affiliated with Visayan Electric, MCWD or any government agency\./,'일정은 갑자기 바뀔 수 있습니다. 항상 링크된 공식 출처를 확인하세요. Visayan Electric, MCWD 및 어떤 정부 기관과도 관련이 없는 비공식 서비스입니다.'],
+   [/^\s*Other areas:\s*$/,'다른 지역: '],[/^Privacy Policy$/,'개인정보 처리방침'],
+   [/^Brownout (& water interruption )?schedule today in (.+), Cebu · (.+)$/,function(m,w,n,d){return n+', 세부 오늘의 정전'+(w?'·단수':'')+' 일정 · '+d}],
+   [/^Water interruption today in (.+), Cebu · (.+)$/,'$1, 세부 오늘의 단수 · $2'],
+   // 날짜·시간
+   [/\b(Mon|Tue|Wed|Thu|Fri|Sat|Sun), (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\d{1,2})\b/g,function(m,w,mo,d){return MON[mo]+'월 '+d+'일 ('+WD[w]+')'}],
+   [/\b(\d{1,2}):(\d{2}) (AM|PM)\b/g,function(m,h,mi,p){return (p==='AM'?'오전 ':'오후 ')+h+':'+mi}],
+   [/\b(\d{1,2}) (AM|PM)–(\d{1,2}) (AM|PM)\b/g,function(m,a,p,b,q){return (p==='AM'?'오전 ':'오후 ')+a+'시–'+(q==='AM'?'오전 ':'오후 ')+b+'시'}],
+   [/\b(\d{1,2})–(\d{1,2}) (AM|PM)\b/g,function(m,a,b,p){return (p==='AM'?'오전 ':'오후 ')+a+'–'+b+'시'}]
+  ];
+  Object.keys(DESC).forEach(function(k){R.unshift([new RegExp('US EPA: “'+rx(k)+'”'),'US EPA 기준(번역): “'+DESC[k]+'”'])});
+  function tr(s){R.forEach(function(r){s=s.replace(r[0],r[1])});return s}
+  var orig=new WeakMap(), t0=document.title;
+  function apply(){
+    var ko=LANG==='ko'; document.documentElement.lang=ko?'ko':'en'; document.title=ko?tr(t0):t0;
+    var w=document.createTreeWalker(document.querySelector('.wrap'),NodeFilter.SHOW_TEXT,null), n, nodes=[];
+    while((n=w.nextNode())){ var p=n.parentElement; if(p&&!p.closest('[data-src],script,style,.seg,.brand')) nodes.push(n) }
+    nodes.forEach(function(n){ if(!orig.has(n)) orig.set(n,n.nodeValue); n.nodeValue=ko?tr(orig.get(n)):orig.get(n) });
+    document.querySelectorAll('[data-lang-btn]').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.langBtn===LANG))});
+  }
+  document.querySelectorAll('[data-lang-btn]').forEach(function(b){b.addEventListener('click',function(){
+    LANG=b.dataset.langBtn; try{localStorage.setItem('cebu-lang',LANG)}catch(e){}
+    apply(); try{window.umami&&umami.track('lang-toggle',{lang:LANG,page:'city'})}catch(_){}
+  })});
+  apply();
+})();
+</script>
+
 </body>
 </html>

@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta name="color-scheme" content="light">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="Cebu brownout schedule today: Visayan Electric scheduled maintenance and rotational brownouts by barangay for Cebu City, Mandaue, Talisay, Consolacion, Liloan, Minglanilla, Naga and San Fernando. Plus MCWD water interruptions. Unofficial, updated hourly.">
 <title>Cebu Alerts · Brownout &amp; Water Interruption Today by Barangay</title>
@@ -9,7 +10,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
-<script>try{var t=localStorage.getItem('cebu-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <style>
 :root{
   --paper:#F3F5F7; --surface:#FFFFFF; --ink:#10202B; --muted:#4A5A66; --line:#D5DCE2;
@@ -19,24 +19,6 @@
   --red:#C23B2C; --yellow:#B98A00; --ok:#2F7D4F; --past:#E4EAEF;
   --display:"Bricolage Grotesque","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   --body:"IBM Plex Sans","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    color-scheme:dark;
-    --paper:#0E171E; --surface:#16232D; --ink:#E8EEF2; --muted:#A9B8C3; --line:#2A3A46;
-    --accent:#6DB8EE; --on-accent:#06202F; --chip-bg:#3A2E0F; --chip-fg:#FFD98A;
-    --band-bg:#1B3040; --band-ink:#E8EEF2; --band-btn-bg:#6DB8EE; --band-btn-fg:#06202F;
-    --amber:#F0B429; --amber-ink:#1A1300; --amber-soft:#3A2E10;
-    --red:#E0604F; --yellow:#E2B53A; --ok:#5DBB86; --past:#1F2D38;
-  }
-}
-:root[data-theme="dark"]{
-  color-scheme:dark;
-  --paper:#0E171E; --surface:#16232D; --ink:#E8EEF2; --muted:#A9B8C3; --line:#2A3A46;
-  --accent:#6DB8EE; --on-accent:#06202F; --chip-bg:#3A2E0F; --chip-fg:#FFD98A;
-  --band-bg:#1B3040; --band-ink:#E8EEF2; --band-btn-bg:#6DB8EE; --band-btn-fg:#06202F;
-  --amber:#F0B429; --amber-ink:#1A1300; --amber-soft:#3A2E10;
-  --red:#E0604F; --yellow:#E2B53A; --ok:#5DBB86; --past:#1F2D38;
 }
 *{box-sizing:border-box}
 [hidden]{display:none!important}
@@ -52,6 +34,7 @@ h1{font:800 clamp(38px,8vw,56px)/1.05 var(--display);letter-spacing:-.02em;margi
 .topnav{display:none;gap:20px;font-size:15px;font-weight:500}
 .topnav a{text-decoration:none;padding:13px 0}
 @media (min-width:640px){.topnav{display:flex}}
+.tools{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .seg{display:flex;padding:3px;border:1.5px solid var(--line);border-radius:10px;background:var(--surface)}
 .seg button{min-height:44px;padding:0 14px;border:0;border-radius:7px;font:600 14px/1 var(--body);cursor:pointer;background:transparent;color:var(--ink)}
 .seg button[aria-pressed="true"]{background:var(--accent);color:var(--on-accent)}
@@ -156,9 +139,11 @@ footer{font-size:13px;color:var(--muted);display:grid;gap:6px}
     <nav class="topnav" aria-label="Page sections">
       <a href="#status">Today</a><a href="#covers">What we cover</a><a href="#how">How it works</a>
     </nav>
-    <div class="seg" role="group" aria-label="Color theme">
-      <button type="button" data-theme-btn="light" aria-pressed="true">Light</button>
-      <button type="button" data-theme-btn="dark" aria-pressed="false">Dark</button>
+    <div class="tools">
+      <div class="seg" role="group" aria-label="Language">
+        <button type="button" data-lang-btn="en" aria-pressed="true" lang="en">EN</button>
+        <button type="button" data-lang-btn="ko" aria-pressed="false" lang="ko">한국어</button>
+      </div>
     </div>
   </div>
 
@@ -252,35 +237,102 @@ footer{font-size:13px;color:var(--muted);display:grid;gap:6px}
 
   <footer>
     <div>Lapu-Lapu and Cordova are served by MECO, which doesn't publish a rotation map. They aren't covered here.</div>
-    <div>Sources: <a href="https://fyi.aboitizpower.com" target="_blank" rel="noopener" data-umami-event="source-click">fyi.aboitizpower.com</a> (Visayan Electric rotation schedule) and <a href="https://www.visayanelectric.com/customer-services/service-advisory" target="_blank" rel="noopener" data-umami-event="source-click">Visayan Electric service advisories</a> (scheduled maintenance, shown as written), and <a href="https://www.mcwd.gov.ph" target="_blank" rel="noopener" data-umami-event="source-click">MCWD</a> (water interruptions, shown as written). City of each barangay is matched by us from official barangay lists.</div>
+    <div data-i18n-html="src">Sources: <a href="https://fyi.aboitizpower.com" target="_blank" rel="noopener" data-umami-event="source-click">fyi.aboitizpower.com</a> (Visayan Electric rotation schedule) and <a href="https://www.visayanelectric.com/customer-services/service-advisory" target="_blank" rel="noopener" data-umami-event="source-click">Visayan Electric service advisories</a> (scheduled maintenance, shown as written), and <a href="https://www.mcwd.gov.ph" target="_blank" rel="noopener" data-umami-event="source-click">MCWD</a> (water interruptions, shown as written). City of each barangay is matched by us from official barangay lists.</div>
     <div>Not affiliated with Visayan Electric, MECO, MCWD or any government agency. Dili opisyal nga serbisyo.</div>
     <div><a href="privacy.html" data-umami-event="privacy-click">Privacy Policy</a></div>
   </footer>
 </div>
 
 <script>
+// 한국어 보기: 정적 문구는 영어 원문 → 한글 사전으로 바꾸고, 동적 문구는 L()/KOL() 로 직접 고른다. 전력사·MCWD 원문은 번역하지 않는다.
+var LANG='en';
+try{var _l=localStorage.getItem('cebu-lang');if(_l==='ko'||_l==='en')LANG=_l}catch(e){}
+function KOL(){return LANG==='ko'}
+function LOC(){return LANG==='ko'?'ko-KR':'en-US'}
+var KO={
+'Cebu Alerts · Brownout & Water Interruption Today by Barangay':'Cebu Alerts · 바랑가이별 오늘의 정전·단수 정보',
+'Cebu Alerts home':'Cebu Alerts 홈','Page sections':'페이지 구역','Language':'언어','Day':'날짜','Time':'시간','Brownouts by city':'시·군별 정전',
+'Today':'오늘','Tomorrow':'내일','What we cover':'제공 정보','How it works':'이용 방법',
+'Unofficial community service':'비공식 커뮤니티 서비스',
+'Free · Cebu Province · 53 cities & municipalities':'무료 · 세부 주 · 53개 시·군',
+'Know before the power goes out.':'정전되기 전에 먼저 알아두세요.',
+'Brownout and water interruption alerts for Cebu, gathered from the official announcements: scheduled & rotational brownouts by barangay (Visayan Electric areas), MCWD water interruptions and air quality.':'세부의 정전·단수 알림을 공식 공지에서 모아 전합니다. 바랑가이별 예정 정전·순환 정전(Visayan Electric 공급 지역), MCWD 단수, 대기질을 다룹니다.',
+'Join the Viber Community':'Viber 커뮤니티 가입','Check your barangay ↓':'내 바랑가이 확인 ↓',
+'City / Municipality':'시·군','Barangay':'바랑가이','By city':'시·군별 보기',
+'Power':'전기','Water':'물','Air quality':'대기질',
+'Scheduled and rotational brownouts by barangay in Visayan Electric areas. Updated hourly.':'Visayan Electric 공급 지역의 바랑가이별 예정 정전과 순환 정전. 매시간 갱신됩니다.',
+'Water interruptions posted by MCWD, shown with the areas and times as posted.':'MCWD가 공지한 단수 정보를 공지된 지역과 시간 그대로 보여 드립니다.',
+'An estimate from Open-Meteo model data. Viber alerts go out only when the US AQI is 101 or higher.':'Open-Meteo 모델 데이터로 계산한 추정치입니다. Viber 알림은 US AQI가 101 이상일 때만 나갑니다.',
+'We read the notices':'공지를 읽습니다','Official announcements from the power and water utilities.':'전력사와 수도 당국의 공식 공지입니다.',
+'We sort them by place':'지역별로 정리합니다','Date, time and area are copied from the notice as posted, never guessed.':'날짜·시간·지역은 공지에 적힌 그대로 옮기며, 추측하지 않습니다.',
+'You get it on Viber':'Viber로 받아보세요','A daily summary at 9 AM, and urgent notices as soon as they appear. Each one is checked against the original before it is posted.':'매일 오전 9시에 요약을 보내고, 긴급 공지는 올라오는 즉시 알립니다. 모든 게시물은 원문과 대조한 뒤 올립니다.',
+'Get this on Viber every day':'이 정보를 매일 Viber로 받으세요','Daily 9 AM schedule + rotational updates':'매일 오전 9시 일정 + 순환 정전 업데이트','Join free on Viber →':'Viber 무료 가입 →',
+'Emergencies or downed lines':'긴급 상황·전선 끊김','Call your power utility directly. This page can\'t take outage reports.':'전력사에 직접 전화하세요. 이 페이지에서는 정전 신고를 받지 않습니다.',
+'(24/7)':'(24시간)',
+'Lapu-Lapu and Cordova are served by MECO, which doesn\'t publish a rotation map. They aren\'t covered here.':'라푸라푸와 코르도바는 MECO가 공급하며, MECO는 순환 정전 지도를 공개하지 않아 여기서는 다루지 않습니다.',
+'Not affiliated with Visayan Electric, MECO, MCWD or any government agency. Dili opisyal nga serbisyo.':'Visayan Electric, MECO, MCWD 및 어떤 정부 기관과도 관련이 없는 비공식 서비스입니다. Dili opisyal nga serbisyo.',
+'Privacy Policy':'개인정보 처리방침',
+// 동적 문구
+'Grid alert':'전력망 경보','No rotation plan':'순환 정전 계획 없음',
+'No rotational brownout scheduled':'예정된 순환 정전 없음','No rotation plan for this day':'이 날은 순환 정전 계획 없음',
+'Scheduled off':'정전 예정','Power on':'전기 들어옴','Now':'지금',
+'Only part of the barangay may be affected. ':'바랑가이 일부만 해당될 수 있습니다. ',
+'Scheduled maintenance':'예정 정비 정전','Other areas':'기타 지역','source':'원문',
+'❌ Cancelled by Visayan Electric · ':'❌ Visayan Electric 취소 · ',
+'Water interruptions':'단수','TODAY':'오늘','Emergency':'긴급','Correction':'정정','Why':'사유','When':'시간','Areas':'지역',
+'As posted by MCWD':'MCWD 게시 원문','Area as listed':'공지된 지역',
+'Cebu Province':'세부 주','Now ':'지금',
+'Worst later today':'오늘 중 최악','Worst tomorrow':'내일 최악',
+'Good':'좋음','Moderate':'보통','Unhealthy for Sensitive Groups':'민감군에게 나쁨','Unhealthy':'나쁨','Very Unhealthy':'매우 나쁨','Hazardous':'위험','No data':'데이터 없음',
+'Air quality is satisfactory, and air pollution poses little or no risk.':'대기질이 양호하며 대기오염 위험이 거의 없습니다.',
+'Air quality is acceptable. However, there may be a risk for some people, particularly those who are unusually sensitive to air pollution.':'대기질이 허용 수준입니다. 다만 대기오염에 특히 민감한 일부 사람에게는 위험이 있을 수 있습니다.',
+'Members of sensitive groups may experience health effects. The general public is less likely to be affected.':'민감군은 건강에 영향을 받을 수 있습니다. 일반인은 영향 가능성이 낮습니다.',
+'Some members of the general public may experience health effects; members of sensitive groups may experience more serious health effects.':'일반인 중 일부도 건강에 영향을 받을 수 있고, 민감군은 더 심각한 영향을 받을 수 있습니다.',
+'Health alert: The risk of health effects is increased for everyone.':'건강 경보: 모든 사람의 건강 영향 위험이 커졌습니다.',
+'Health warning of emergency conditions: everyone is more likely to be affected.':'긴급 상황 건강 경고: 모든 사람이 영향을 받을 가능성이 높습니다.',
+'Loading map…':'지도를 불러오는 중…','The map could not be loaded. See the list below.':'지도를 불러오지 못했습니다. 아래 목록을 확인하세요.',
+'Zoom in':'확대','Zoom out':'축소','Reset map':'지도 초기화',
+'Three-letter codes show each town (CEB = Cebu City). Pinch, double-tap or use + to zoom in for full names; tap a town for its value.':'세 글자 코드는 각 시·군입니다(CEB = 세부시티). 두 손가락으로 벌리거나 두 번 탭하거나 +를 눌러 확대하면 전체 이름이 보이고, 시·군을 탭하면 수치가 나옵니다.',
+'No data for this time.':'이 시각의 데이터가 없습니다.','Tap a town on the map to see its value.':'지도에서 시·군을 탭하면 수치를 볼 수 있습니다.',
+'All 53 towns (highest first)':'53개 시·군 전체 (높은 순)',
+'Air quality data could not be loaded just now.':'지금은 대기질 데이터를 불러오지 못했습니다.',
+'Model estimate, not a local measurement — each value covers a wide area (about 40 km), so nearby towns often share a color. US EPA Air Quality Index. Air quality: Open-Meteo.com (CC BY 4.0), contains modified Copernicus Atmosphere Monitoring Service information. Boundaries: PSA 2023 via philippines-json-maps (MIT).':'현지 측정값이 아닌 모델 추정치입니다. 값 하나가 넓은 지역(약 40km)을 대표하므로 인접한 시·군은 같은 색인 경우가 많습니다. US EPA 대기질지수(AQI) 기준. 대기질: Open-Meteo.com (CC BY 4.0), 변형된 Copernicus Atmosphere Monitoring Service 정보 포함. 경계: PSA 2023, philippines-json-maps (MIT) 경유.',
+'Schedule data could not be loaded. Please try again, or check ':'일정 데이터를 불러오지 못했습니다. 다시 시도하거나 다음을 확인하세요: '
+};
+var KOHTML={src:'출처: <a href="https://fyi.aboitizpower.com" target="_blank" rel="noopener" data-umami-event="source-click">fyi.aboitizpower.com</a>(Visayan Electric 순환 정전 일정), <a href="https://www.visayanelectric.com/customer-services/service-advisory" target="_blank" rel="noopener" data-umami-event="source-click">Visayan Electric 서비스 공지</a>(예정 정비, 원문 그대로 표시), <a href="https://www.mcwd.gov.ph" target="_blank" rel="noopener" data-umami-event="source-click">MCWD</a>(단수, 원문 그대로 표시). 바랑가이가 속한 시·군은 공식 바랑가이 목록을 바탕으로 당 서비스가 맞춘 것입니다.'};
+function L(s){return LANG==='ko'&&KO[s]!==undefined?KO[s]:s}
 (function(){
-  var root=document.documentElement;
-  function effective(){
-    var t=root.getAttribute('data-theme');
-    if(t) return t;
-    return window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
-  }
-  function sync(){
-    var e=effective();
-    document.querySelectorAll('[data-theme-btn]').forEach(function(b){
-      b.setAttribute('aria-pressed',String(b.getAttribute('data-theme-btn')===e));
+  var orig=new WeakMap(), SKIP='#days,#status,#city,#brgy,#result,#sched,#water,#air,script,style';
+  function applyStatic(){
+    var ko=LANG==='ko';
+    document.documentElement.lang=ko?'ko':'en';
+    if(!document.__t0)document.__t0=document.title;
+    document.title=ko?L(document.__t0):document.__t0;
+    var w=document.createTreeWalker(document.querySelector('.wrap'),NodeFilter.SHOW_TEXT,null), n, nodes=[];
+    while((n=w.nextNode())){ var p=n.parentElement; if(p&&!p.closest(SKIP)&&!p.closest('[data-i18n-html]')) nodes.push(n) }
+    nodes.forEach(function(n){
+      if(!orig.has(n)){ var t=n.nodeValue.trim(); if(!t||KO[t]===undefined) return; orig.set(n,n.nodeValue) }
+      var o=orig.get(n); n.nodeValue=ko?o.replace(o.trim(),KO[o.trim()]):o;
     });
+    document.querySelectorAll('[aria-label]').forEach(function(e){
+      if(e.closest('#days,#air,#result')) return;
+      if(!e.dataset.al){ if(KO[e.getAttribute('aria-label')]===undefined) return; e.dataset.al=e.getAttribute('aria-label') }
+      e.setAttribute('aria-label',ko?KO[e.dataset.al]:e.dataset.al);
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(function(e){
+      if(!orig.has(e)) orig.set(e,e.innerHTML);
+      e.innerHTML=ko?KOHTML[e.dataset.i18nHtml]:orig.get(e);
+    });
+    document.querySelectorAll('[data-lang-btn]').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.langBtn===LANG))});
   }
-  document.querySelectorAll('[data-theme-btn]').forEach(function(b){
+  document.querySelectorAll('[data-lang-btn]').forEach(function(b){
     b.addEventListener('click',function(){
-      var v=b.getAttribute('data-theme-btn');
-      root.setAttribute('data-theme',v);
-      try{localStorage.setItem('cebu-theme',v)}catch(e){}
-      sync();
+      LANG=b.dataset.langBtn; try{localStorage.setItem('cebu-lang',LANG)}catch(e){}
+      applyStatic(); if(window.__render) window.__render();
+      try{ window.umami&&umami.track('lang-toggle',{lang:LANG}) }catch(_){}
     });
   });
-  sync();
+  applyStatic();
 })();
 </script>
 <script>
@@ -299,13 +351,15 @@ function ranges(hours){
   const hs=[...hours].sort((a,b)=>a-b), out=[]; let s=hs[0], p=hs[0];
   for(const h of hs.slice(1)){ if(h===p+1){p=h;continue} out.push([s,p+1]); s=p=h }
   out.push([s,p+1]);
-  return out.map(([a,b])=>{ const A=h12(a),B=h12(b); return A.p===B.p?`${A.x}–${B.x} ${B.p}`:`${A.x} ${A.p}–${B.x} ${B.p}` }).join(', ');
+  return out.map(([a,b])=>{ const A=h12(a),B=h12(b);
+    if(KOL()){ const k=p=>p==='AM'?'오전':'오후'; return A.p===B.p?`${k(B.p)} ${A.x}–${B.x}시`:`${k(A.p)} ${A.x}시–${k(B.p)} ${B.x}시` }
+    return A.p===B.p?`${A.x}–${B.x} ${B.p}`:`${A.x} ${A.p}–${B.x} ${B.p}` }).join(', ');
 }
 function dayLabel(date){
   const t=phtNow().date, d=new Date(date+'T00:00:00Z');
-  const wd=d.toLocaleDateString('en-US',{weekday:'short',timeZone:'UTC'}), md=d.toLocaleDateString('en-US',{month:'short',day:'numeric',timeZone:'UTC'});
+  const wd=d.toLocaleDateString(LOC(),{weekday:'short',timeZone:'UTC'}), md=d.toLocaleDateString(LOC(),{month:'short',day:'numeric',timeZone:'UTC'});
   const diff=Math.round((d-new Date(t+'T00:00:00Z'))/864e5);
-  return {top: diff===0?'Today':diff===1?'Tomorrow':wd, bottom: diff<=1?`${wd}, ${md}`:md};
+  return {top: diff===0?L('Today'):diff===1?L('Tomorrow'):wd, bottom: diff<=1?(KOL()?`${md} (${wd})`:`${wd}, ${md}`):md};
 }
 const qCity = new URLSearchParams(location.search).get('city');
 let state = { day: 0, city: qCity || store.get('city') || 'Cebu City', brgy: store.get('brgy') || 'Lahug' };
@@ -327,15 +381,15 @@ function renderDays(){
 }
 function renderStatus(){
   const d=DATA.days[state.day], f=new Date(DATA.fetched);
-  const as=f.toLocaleString('en-US',{weekday:'short',hour:'numeric',minute:'2-digit',timeZone:'Asia/Manila'});
-  const pill = d.alert ? `<span class="pill ${d.alert.toLowerCase()}">Grid alert ${d.alert}</span>` : `<span class="pill none">No rotation plan</span>`;
-  $('status').innerHTML = `${pill}<span>Schedule as of ${as}</span>`;
+  const as=f.toLocaleString(LOC(),{weekday:'short',hour:'numeric',minute:'2-digit',timeZone:'Asia/Manila'});
+  const pill = d.alert ? `<span class="pill ${d.alert.toLowerCase()}">${L('Grid alert')} ${d.alert}</span>` : `<span class="pill none">${L('No rotation plan')}</span>`;
+  $('status').innerHTML = `${pill}<span>${KOL()?`${as} 기준 일정`:`Schedule as of ${as}`}</span>`;
 }
 function renderSelects(){
   const day=DATA.days[state.day];
   $('city').innerHTML = lgus.map(l=>{
     const n=Object.keys(day.hits[l]||{}).length;
-    return `<option value="${l}">${l}${n?` · ${n} barangays affected`:''}</option>`}).join('');
+    return `<option value="${l}">${l}${n?(KOL()?` · 바랑가이 ${n}곳 영향`:` · ${n} barangays affected`):''}</option>`}).join('');
   $('city').value=state.city;
   const list=DATA.lgus[state.city];
   if(!list.includes(state.brgy)) state.brgy=list[0];
@@ -351,49 +405,52 @@ function renderResult(){
     const on=h&&h.hours.includes(x), gone=isToday&&x+1<=now.hour, cur=isToday&&x===now.hour;
     return `<div class="cell${on?' on':''}${gone?' gone':''}${cur?' now':''}" title="${h12(x).x} ${h12(x).p}"></div>`}).join('');
   const ticks=HOURS.map((x,i)=>`<span>${i%2===0?h12(x).x+(x===12?'pm':''):''}</span>`).join('');
-  const flag = h&&h.flag ? `<div class="caution">We couldn't confirm which city this "${state.brgy}" belongs to from the utility's list. Check the source map before you plan around it.</div>` : '';
+  const flag = h&&h.flag ? `<div class="caution">${KOL()?`전력사 목록만으로는 "${state.brgy}"가 어느 시·군에 속하는지 확인하지 못했습니다. 일정을 잡기 전에 원본 지도를 확인하세요.`:`We couldn't confirm which city this "${state.brgy}" belongs to from the utility's list. Check the source map before you plan around it.`}</div>` : '';
+  const fine = KOL()
+    ? `${h ? L('Only part of the barangay may be affected. ') : ''}순환 정전 일정은 전력망 상황에 따라 빠르게 바뀔 수 있습니다. 최신 내용은 <a href="${DATA.source}" target="_blank" rel="noopener">원본 지도</a>를 확인하세요.`
+    : `${h ? 'Only part of the barangay may be affected. ' : ''}Rotational schedules can change quickly depending on grid conditions. Check <a href="${DATA.source}" target="_blank" rel="noopener">the source map</a> for the latest.`;
   el.innerHTML = `
     <div>
       <div class="where">${state.brgy}, ${state.city}</div>
-      <p class="verdict">${h ? 'Brownout ' + ranges(h.hours) : (day.plan ? 'No rotational brownout scheduled' : 'No rotation plan for this day')}</p>
+      <p class="verdict">${h ? (KOL()?'정전 ':'Brownout ') + ranges(h.hours) : (day.plan ? L('No rotational brownout scheduled') : L('No rotation plan for this day'))}</p>
     </div>
     <div>
       <div class="strip" aria-hidden="true">${cells}</div>
       <div class="ticks" aria-hidden="true">${ticks}</div>
     </div>
-    <div class="legend"><span><i style="background:var(--amber)"></i>Scheduled off</span><span><i style="background:var(--past)"></i>Power on</span>${isToday?'<span><i style="box-shadow:0 0 0 2px var(--ink);background:transparent"></i>Now</span>':''}</div>
+    <div class="legend"><span><i style="background:var(--amber)"></i>${L('Scheduled off')}</span><span><i style="background:var(--past)"></i>${L('Power on')}</span>${isToday?`<span><i style="box-shadow:0 0 0 2px var(--ink);background:transparent"></i>${L('Now')}</span>`:''}</div>
     ${flag}
-    <p class="fine">${h ? 'Only part of the barangay may be affected. ' : ''}Rotational schedules can change quickly depending on grid conditions. Check <a href="${DATA.source}" target="_blank" rel="noopener">the source map</a> for the latest.</p>`;
+    <p class="fine">${fine}</p>`;
 }
 const esc = t => String(t).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 function renderSched(){
-  const el=$('sched'), day=DATA.days[state.day];
-  if(DATA.scheduled==null){ el.innerHTML='<h2>Scheduled maintenance</h2><div class="caution">Visayan Electric\'s advisory page could not be checked just now. Scheduled brownouts are unconfirmed — see the official advisory.</div>'; return }
+  const el=$('sched'), day=DATA.days[state.day], ko=KOL();
+  if(DATA.scheduled==null){ el.innerHTML=`<h2>${L('Scheduled maintenance')}</h2><div class="caution">${ko?'Visayan Electric 공지 페이지를 지금은 확인하지 못했습니다. 예정 정전은 확인되지 않은 상태이니 공식 공지를 보세요.':'Visayan Electric\'s advisory page could not be checked just now. Scheduled brownouts are unconfirmed — see the official advisory.'}</div>`; return }
   const all=DATA.scheduled.filter(r=>r.date===day.date);
   const mine=all.filter(r=>r.lgus.includes(state.city)), other=all.filter(r=>!r.lgus.length);
-  const card=r=>`<article${r.cancelled?' style="opacity:.75;border-left-color:var(--muted)"':''}><p class="t">${r.cancelled?'❌ Cancelled by Visayan Electric · ':''}${esc(r.time)}</p><p>${esc(r.areas)}</p><p class="fine">${esc(r.purpose)} · <a href="${esc(r.url)}" target="_blank" rel="noopener" data-umami-event="source-click">source</a></p></article>`;
-  const ck=DATA.scheduledChecked?new Date(DATA.scheduledChecked).toLocaleString('en-US',{weekday:'short',hour:'numeric',minute:'2-digit',timeZone:'Asia/Manila'}):null;
-  el.innerHTML=`<h2>Scheduled maintenance · ${esc(state.city)}</h2>`+
-    (DATA.scheduledStale?`<div class="caution">Last checked ${esc(ck)}. Visayan Electric's advisory could not be re-checked for a while — please confirm on the official page.</div>`:'')+
-    (mine.length?`<div class="sch">${mine.map(card).join('')}</div>`:`<p class="fine">No scheduled maintenance listed for ${esc(state.city)} on this day.</p>`)+
-    (other.length?`<h2>Other areas</h2><div class="sch">${other.map(card).join('')}</div>`:'')+
-    `<p class="fine">Scheduled maintenance is copied as written by Visayan Electric${ck?` (checked ${esc(ck)})`:''}. Check the exact streets in the text.</p>`;
+  const card=r=>`<article${r.cancelled?' style="opacity:.75;border-left-color:var(--muted)"':''}><p class="t">${r.cancelled?L('❌ Cancelled by Visayan Electric · '):''}${esc(r.time)}</p><p>${esc(r.areas)}</p><p class="fine">${esc(r.purpose)} · <a href="${esc(r.url)}" target="_blank" rel="noopener" data-umami-event="source-click">${L('source')}</a></p></article>`;
+  const ck=DATA.scheduledChecked?new Date(DATA.scheduledChecked).toLocaleString(LOC(),{weekday:'short',hour:'numeric',minute:'2-digit',timeZone:'Asia/Manila'}):null;
+  el.innerHTML=`<h2>${L('Scheduled maintenance')} · ${esc(state.city)}</h2>`+
+    (DATA.scheduledStale?`<div class="caution">${ko?`마지막 확인: ${esc(ck)}. Visayan Electric 공지를 한동안 다시 확인하지 못했습니다. 공식 페이지에서 확인해 주세요.`:`Last checked ${esc(ck)}. Visayan Electric's advisory could not be re-checked for a while — please confirm on the official page.`}</div>`:'')+
+    (mine.length?`<div class="sch">${mine.map(card).join('')}</div>`:`<p class="fine">${ko?`이 날 ${esc(state.city)}에 등록된 예정 정비 정전이 없습니다.`:`No scheduled maintenance listed for ${esc(state.city)} on this day.`}</p>`)+
+    (other.length?`<h2>${L('Other areas')}</h2><div class="sch">${other.map(card).join('')}</div>`:'')+
+    `<p class="fine">${ko?`예정 정비 정전은 Visayan Electric이 쓴 그대로 옮긴 것입니다${ck?` (확인 ${esc(ck)})`:''}. 정확한 거리명은 본문을 확인하세요.`:`Scheduled maintenance is copied as written by Visayan Electric${ck?` (checked ${esc(ck)})`:''}. Check the exact streets in the text.`}</p>`;
 }
 function renderWater(){
-  const el=$('water'), w=DATA.water;
-  if(w==null){ el.innerHTML='<h2>💧 Water interruptions</h2><div class="caution">MCWD\'s interruption list could not be checked just now. Water interruptions are unconfirmed.</div>'; return }
+  const el=$('water'), w=DATA.water, ko=KOL();
+  if(w==null){ el.innerHTML=`<h2>💧 ${L('Water interruptions')}</h2><div class="caution">${ko?'MCWD 단수 목록을 지금은 확인하지 못했습니다. 단수는 확인되지 않은 상태입니다.':'MCWD\'s interruption list could not be checked just now. Water interruptions are unconfirmed.'}</div>`; return }
   // 원문을 칸(Why·When·Areas)으로 나눠 보여 주고 원문 한 줄은 접어 둔다. 못 나눈 공지는 원문만
   const today=phtNow().date;
   const card=it=>{ const pt=it.parts, old=it.date!==today;
-    const badges=(old?'':'<span class="wbadge today">TODAY</span>')+(pt&&pt.emergency?'<span class="wbadge emer">Emergency</span>':'')+(pt&&pt.erratum?'<span class="wbadge">Correction</span>':'');
-    const head=`<p class="t">${badges}${esc(it.cities.join(', ')||'Area as listed')} · posted ${esc(dayLabel(it.date).bottom)}</p>`;
-    const body=pt?`<dl class="wl"><dt>Why</dt><dd>${esc(pt.why)}</dd><dt>When</dt><dd><b>${esc(pt.when)}</b></dd><dt>Areas</dt><dd class="chips">${pt.areas.map(a=>`<span class="chip">${esc(a)}</span>`).join('')}</dd></dl><details><summary>As posted by MCWD</summary><p class="fine">${esc(it.text)}</p></details>`
+    const badges=(old?'':`<span class="wbadge today">${L('TODAY')}</span>`)+(pt&&pt.emergency?`<span class="wbadge emer">${L('Emergency')}</span>`:'')+(pt&&pt.erratum?`<span class="wbadge">${L('Correction')}</span>`:'');
+    const head=`<p class="t">${badges}${esc(it.cities.join(', ')||L('Area as listed'))} · ${ko?'게시':'posted'} ${esc(dayLabel(it.date).bottom)}</p>`;
+    const body=pt?`<dl class="wl"><dt>${L('Why')}</dt><dd>${esc(pt.why)}</dd><dt>${L('When')}</dt><dd><b>${esc(pt.when)}</b></dd><dt>${L('Areas')}</dt><dd class="chips">${pt.areas.map(a=>`<span class="chip">${esc(a)}</span>`).join('')}</dd></dl><details><summary>${L('As posted by MCWD')}</summary><p class="fine">${esc(it.text)}</p></details>`
       :`<p>${esc(it.text)}</p>`;
     return `<article class="wcard${old?' old':''}">${head}${body}</article>` };
   const sorted=[...w].sort((a,b)=>(b.date===today)-(a.date===today));
-  el.innerHTML='<h2>💧 Water interruptions | Walay tubig · since yesterday</h2>'+
-    (w.length?`<div class="sch">${sorted.map(card).join('')}</div>`:'<p class="fine">No water interruption posted by MCWD since yesterday.</p>')+
-    '<p class="fine">As posted by MCWD (Metro Cebu Water District). EWSI = emergency water service interruption · AA = affected areas · EST/ETR = estimated time of restoration.</p>';
+  el.innerHTML=(ko?'<h2>💧 단수 | Walay tubig · 어제부터</h2>':'<h2>💧 Water interruptions | Walay tubig · since yesterday</h2>')+
+    (w.length?`<div class="sch">${sorted.map(card).join('')}</div>`:`<p class="fine">${ko?'어제 이후 MCWD가 공지한 단수가 없습니다.':'No water interruption posted by MCWD since yesterday.'}</p>`)+
+    `<p class="fine">${ko?'MCWD(Metro Cebu Water District) 공지 원문 기준. EWSI = 긴급 단수 · AA = 영향 지역 · EST/ETR = 복구 예상 시각. (사유·시간·지역 내용은 MCWD가 쓴 영어 그대로입니다.)':'As posted by MCWD (Metro Cebu Water District). EWSI = emergency water service interruption · AA = affected areas · EST/ETR = estimated time of restoration.'}</p>`;
 }
 // ── 대기질 지도 (세부 주 53개 시·군, 배경 지도 없이 경계선만). 나중에 정전·단수 레이어를 같은 지도에 얹는다
 const AQI_LEVELS=[[50,'Good','#2F9E44','Air quality is satisfactory, and air pollution poses little or no risk.'],
@@ -423,37 +480,38 @@ function geoPaths(){
   GEO._W=W; GEO._H=H; GEO._vb=`0 0 ${W} ${H}`;
 }
 function renderAir(){
-  const el=$('air'), a=DATA.air, L=MAP_LAYERS.air;
-  const head='<h2>🌫 Air quality · Cebu Province</h2>';  // 날짜는 아래 버튼·카드에
-  if(a==null){ el.innerHTML=head+'<p class="fine">Air quality data could not be loaded just now.</p>'; return }
-  const note='<p class="fine">Model estimate, not a local measurement — each value covers a wide area (about 40 km), so nearby towns often share a color. US EPA Air Quality Index. Air quality: Open-Meteo.com (CC BY 4.0), contains modified Copernicus Atmosphere Monitoring Service information. Boundaries: PSA 2023 via philippines-json-maps (MIT).</p>';
+  const el=$('air'), a=DATA.air, LY=MAP_LAYERS.air;
+  const head=`<h2>🌫 ${L('Air quality')} · ${L('Cebu Province')}</h2>`;  // 날짜는 아래 버튼·카드에
+  if(a==null){ el.innerHTML=head+`<p class="fine">${L('Air quality data could not be loaded just now.')}</p>`; return }
+  const NOTE_EN='Model estimate, not a local measurement — each value covers a wide area (about 40 km), so nearby towns often share a color. US EPA Air Quality Index. Air quality: Open-Meteo.com (CC BY 4.0), contains modified Copernicus Atmosphere Monitoring Service information. Boundaries: PSA 2023 via philippines-json-maps (MIT).';
+  const note=`<p class="fine">${L(NOTE_EN)}</p>`;
   // 버튼·카드에 날짜를 붙인다 (값 기준 시각은 Open-Meteo 현재값 시각, 없으면 조회 시각)
   const anyT=(Object.values(a).find(v=>v&&v.time)||{}).time, base=anyT?new Date(anyT+':00+08:00'):new Date(DATA.fetched);
-  const fmtD=d=>d.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric',timeZone:'Asia/Manila'});
-  const fmtT=d=>d.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'Asia/Manila'});
+  const fmtD=d=>d.toLocaleDateString(LOC(),{weekday:'short',month:'short',day:'numeric',timeZone:'Asia/Manila'});
+  const fmtT=d=>d.toLocaleTimeString(LOC(),{hour:'numeric',minute:'2-digit',timeZone:'Asia/Manila'});
   const tmr=new Date(base.getTime()+864e5);
-  const fmtH=d=>d.toLocaleTimeString('en-US',{hour:'numeric',timeZone:'Asia/Manila'});
+  const fmtH=d=>d.toLocaleTimeString(LOC(),{hour:'numeric',timeZone:'Asia/Manila'});
   const modeDate={now:`${fmtD(base)}, ${fmtH(base)}`, today:fmtD(base), tomorrow:fmtD(tmr)};
-  const modes=`<div class="days" role="group" aria-label="Time">${AIR_MODES.map(([m,t])=>`<button type="button" data-m="${m}" aria-pressed="${m===airMode}">${t}<small>${modeDate[m]}</small></button>`).join('')}</div>`;
-  const legend=`<div class="legend">${AQI_LEVELS.slice(0,4).map(l=>`<span><i style="background:${l[2]}"></i>${l[1]}</span>`).join('')}<span><i style="background:var(--past)"></i>No data</span></div>`;
-  let map='<p class="fine">Loading map…</p>';
+  const modes=`<div class="days" role="group" aria-label="${L('Time')}">${AIR_MODES.map(([m,t])=>`<button type="button" data-m="${m}" aria-pressed="${m===airMode}">${L(t)}<small>${modeDate[m]}</small></button>`).join('')}</div>`;
+  const legend=`<div class="legend">${AQI_LEVELS.slice(0,4).map(l=>`<span><i style="background:${l[2]}"></i>${L(l[1])}</span>`).join('')}<span><i style="background:var(--past)"></i>${L('No data')}</span></div>`;
+  let map=`<p class="fine">${L('Loading map…')}</p>`;
   if(GEO){
-    map=`<div class="mapwrap"><svg class="aqmap" viewBox="${GEO._vb}" role="img" aria-label="Map of Cebu Province colored by air quality. Zoom in to see town names.">`+GEO.features.map(f=>{
-      const k=f.properties.key, v=L.value(a[k],airMode), lv=v!=null?aqiLevel(v):null;
-      return `<path d="${f._d}" fill="${lv?lv[2]:'var(--past)'}" class="${k===airSel?'sel':''}" data-k="${esc(k)}" tabindex="0" role="button" aria-label="${esc(f.properties.name)}: ${v!=null?'US AQI '+v+', '+lv[1]:'no data'}"><title>${esc(f.properties.name)}: ${v!=null?v+' '+lv[1]:'no data'}</title></path>`}).join('')+
+    map=`<div class="mapwrap"><svg class="aqmap" viewBox="${GEO._vb}" role="img" aria-label="${KOL()?'대기질로 색을 칠한 세부 주 지도. 확대하면 시·군 이름이 보입니다.':'Map of Cebu Province colored by air quality. Zoom in to see town names.'}">`+GEO.features.map(f=>{
+      const k=f.properties.key, v=LY.value(a[k],airMode), lv=v!=null?aqiLevel(v):null;
+      return `<path d="${f._d}" fill="${lv?lv[2]:'var(--past)'}" class="${k===airSel?'sel':''}" data-k="${esc(k)}" tabindex="0" role="button" aria-label="${esc(f.properties.name)}: ${v!=null?'US AQI '+v+', '+L(lv[1]):L('No data')}"><title>${esc(f.properties.name)}: ${v!=null?v+' '+L(lv[1]):L('No data')}</title></path>`}).join('')+
       '<g class="leaders" aria-hidden="true"></g><g class="labels" aria-hidden="true">'+GEO.features.map(f=>`<text data-ax="${f._lx.toFixed(1)}" data-ay="${f._ly.toFixed(1)}" data-lk="${f._lk.toFixed(2)}" data-area="${Math.round(25600/(f._lk*f._lk))}" data-full="${esc(f.properties.name)}" data-abbr="${ABBR[f.properties.key]||esc(f.properties.name.slice(0,3).toUpperCase())}"></text>`).join('')+'</g></svg>'+
-      '<div class="zoombtns"><button type="button" data-z="in" aria-label="Zoom in">+</button><button type="button" data-z="out" aria-label="Zoom out">−</button><button type="button" data-z="reset" aria-label="Reset map">⟲</button></div></div>'+
-      '<p class="fine maphint">Three-letter codes show each town (CEB = Cebu City). Pinch, double-tap or use + to zoom in for full names; tap a town for its value.</p>';
-  } else if(GEO===false){ map='<p class="fine">The map could not be loaded. See the list below.</p>' }
-  const buildInfo=()=>{ const sv=L.value(a[airSel],airMode), slv=sv!=null?aqiLevel(sv):null;
+      '<div class="zoombtns"><button type="button" data-z="in" aria-label="'+L('Zoom in')+'">+</button><button type="button" data-z="out" aria-label="'+L('Zoom out')+'">−</button><button type="button" data-z="reset" aria-label="'+L('Reset map')+'">⟲</button></div></div>'+
+      '<p class="fine maphint">'+L('Three-letter codes show each town (CEB = Cebu City). Pinch, double-tap or use + to zoom in for full names; tap a town for its value.')+'</p>';
+  } else if(GEO===false){ map=`<p class="fine">${L('The map could not be loaded. See the list below.')}</p>` }
+  const buildInfo=()=>{ const sv=LY.value(a[airSel],airMode), slv=sv!=null?aqiLevel(sv):null;
   const sname=GEO&&GEO.features?(GEO.features.find(f=>f.properties.key===airSel)||{properties:{name:airSel}}).properties.name:airSel;
-  return `<div class="aqinfo" style="border-left-color:${slv?slv[2]:'var(--line)'}"><div class="where">${esc(sname)} · ${esc(AIR_MODES.find(m=>m[0]===airMode)[1].toLowerCase())} · <b>${esc(modeDate[airMode])}</b></div>`+
-    (slv?`<p class="verdict">${sv} — ${esc(slv[1])}</p><p class="fine">US EPA: “${esc(slv[3])}”${a[airSel]&&airMode==='now'&&a[airSel].pm25!=null?` · PM2.5 ${a[airSel].pm25} µg/m³`:''}</p>`:'<p class="fine">No data for this time.</p>')+
-    '<p class="fine">Tap a town on the map to see its value.</p></div>' };
+  return `<div class="aqinfo" style="border-left-color:${slv?slv[2]:'var(--line)'}"><div class="where">${esc(sname)} · ${esc(KOL()?L(AIR_MODES.find(m=>m[0]===airMode)[1]):AIR_MODES.find(m=>m[0]===airMode)[1].toLowerCase())} · <b>${esc(modeDate[airMode])}</b></div>`+
+    (slv?`<p class="verdict">${sv} — ${esc(L(slv[1]))}</p><p class="fine">${KOL()?'US EPA 기준(번역)':'US EPA'}: “${esc(L(slv[3]))}”${a[airSel]&&airMode==='now'&&a[airSel].pm25!=null?` · PM2.5 ${a[airSel].pm25} µg/m³`:''}</p>`:`<p class="fine">${L('No data for this time.')}</p>`)+
+    `<p class="fine">${L('Tap a town on the map to see its value.')}</p></div>` };
   const info=buildInfo();
-  const rows=Object.entries(a).sort((x,y)=>(L.value(y[1],airMode)||0)-(L.value(x[1],airMode)||0)).map(([c,v])=>{ const val=L.value(v,airMode), lv=val!=null?aqiLevel(val):null;
-    return `<dt><span style="color:${lv?lv[2]:'var(--muted)'}">●</span> ${esc(c)} <small class="fine">${ABBR[c]||''}</small></dt><dd><b class="num">${val??'–'}</b> ${lv?esc(lv[1]):''}</dd>` }).join('');
-  el.innerHTML=head+modes+map+legend+info+`<details><summary>All 53 towns (highest first)</summary><dl>${rows}</dl></details>`+note;
+  const rows=Object.entries(a).sort((x,y)=>(LY.value(y[1],airMode)||0)-(LY.value(x[1],airMode)||0)).map(([c,v])=>{ const val=LY.value(v,airMode), lv=val!=null?aqiLevel(val):null;
+    return `<dt><span style="color:${lv?lv[2]:'var(--muted)'}">●</span> ${esc(c)} <small class="fine">${ABBR[c]||''}</small></dt><dd><b class="num">${val??'–'}</b> ${lv?esc(L(lv[1])):''}</dd>` }).join('');
+  el.innerHTML=head+modes+map+legend+info+`<details><summary>${L('All 53 towns (highest first)')}</summary><dl>${rows}</dl></details>`+note;
   el.querySelectorAll('[data-m]').forEach(b=>b.onclick=()=>{ airMode=b.dataset.m; renderAir(); try{ window.umami&&umami.track('air-mode',{mode:airMode}) }catch(_){} });
   const pick=k=>{ airSel=k; store.set('airSel',k);  // 지도는 다시 그리지 않는다 (확대 상태·두 번 탭 유지)
     el.querySelectorAll('path[data-k]').forEach(p=>p.classList.toggle('sel',p.dataset.k===k));
@@ -539,12 +597,13 @@ $('city').onchange=e=>{ state.city=e.target.value; store.set('city',state.city);
 $('brgy').onchange=e=>{ state.brgy=e.target.value; store.set('brgy',state.brgy); renderResult();
   try{ if(state.brgy) window.umami && umami.track('barangay-lookup',{city:state.city}) }catch(_){} };
 
+window.__render=render;
 render();
 }
 // data.json 은 클라우드 감시가 매시간 새로 쓴다. 캐시를 피하려고 시각을 붙인다.
 fetch('data.json?t=' + Date.now()).then(r => { if(!r.ok) throw new Error(r.status); return r.json() })
   .then(d => { DATA = d; init() })
-  .catch(() => { document.getElementById('result').innerHTML = '<p class="fine">Schedule data could not be loaded. Please try again, or check <a href="https://fyi.aboitizpower.com" target="_blank" rel="noopener">the source map</a>.</p>' });
+  .catch(() => { document.getElementById('result').innerHTML = '<p class="fine">'+L('Schedule data could not be loaded. Please try again, or check ')+'<a href="https://fyi.aboitizpower.com" target="_blank" rel="noopener">'+(KOL()?'원본 지도':'the source map')+'</a>.</p>' });
 </script>
 </body>
 </html>
